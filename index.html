@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prestige Worldwide Dustless Eco-Blast - Industrial-Luxury Surface Cleaning">
+    <title>Prestige Worldwide Dustless Eco-Blast</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Grime Overlay (starts at 15% opacity) -->
+    <div id="grime-overlay"></div>
+    
+    <!-- Particle Container -->
+    <canvas id="particle-canvas"></canvas>
+    
+    <!-- Sticky CTA -->
+    <div id="sticky-cta">
+        <button id="cta-button">Get a Clean Start</button>
+    </div>
+    
+    <!-- Main Content -->
+    <header>
+        <div class="container">
+            <h1>Prestige Worldwide</h1>
+            <p class="tagline">Dustless Eco-Blast Technology</p>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Industrial-Luxury Surface Cleaning</h2>
+                <p>Experience the future of eco-friendly surface preparation with our revolutionary Dustless Eco-Blast system.</p>
+            </div>
+        </section>
+        
+        <!-- Interactive Surface Selector -->
+        <section class="surface-selector">
+            <div class="container">
+                <h2>Select Your Surface</h2>
+                <div class="selector-buttons">
+                    <button class="surface-btn active" data-surface="auto">
+                        <span class="icon">🚗</span>
+                        <span>Automotive</span>
+                    </button>
+                    <button class="surface-btn" data-surface="marine">
+                        <span class="icon">⚓</span>
+                        <span>Marine</span>
+                    </button>
+                    <button class="surface-btn" data-surface="industrial">
+                        <span class="icon">🏭</span>
+                        <span>Industrial</span>
+                    </button>
+                </div>
+                <div class="surface-info">
+                    <div class="info-content active" data-info="auto">
+                        <h3>Automotive Excellence</h3>
+                        <p>Perfect for car restoration, paint prep, and rust removal. Our gentle yet effective process preserves metal integrity while achieving a pristine surface.</p>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%234a4a4a' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-size='24'%3EAutomotive Surface%3C/text%3E%3C/svg%3E" alt="Automotive surface cleaning">
+                    </div>
+                    <div class="info-content" data-info="marine">
+                        <h3>Marine Mastery</h3>
+                        <p>Ideal for boat hulls, decks, and marine equipment. Salt-resistant and environmentally safe for waterfront applications.</p>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%232c5f6f' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-size='24'%3EMarine Surface%3C/text%3E%3C/svg%3E" alt="Marine surface cleaning">
+                    </div>
+                    <div class="info-content" data-info="industrial">
+                        <h3>Industrial Power</h3>
+                        <p>Heavy-duty performance for large-scale industrial projects. Remove coatings, corrosion, and contaminants efficiently and safely.</p>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23555555' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-size='24'%3EIndustrial Surface%3C/text%3E%3C/svg%3E" alt="Industrial surface cleaning">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="features">
+            <div class="container">
+                <h2>Why Choose Eco-Blast?</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>🌱 Eco-Friendly</h3>
+                        <p>100% recyclable media with zero harmful chemicals or emissions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>💨 Dustless</h3>
+                        <p>Our patented water suppression system eliminates 95% of airborne particles.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚡ Efficient</h3>
+                        <p>Complete surface preparation in a fraction of traditional methods' time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Eco Ticker -->
+        <section class="eco-ticker">
+            <div class="ticker-wrapper">
+                <div class="ticker-content">
+                    <span>🌍 Zero VOC Emissions</span>
+                    <span>♻️ 100% Recyclable Media</span>
+                    <span>💧 Water-Based Technology</span>
+                    <span>🌿 EPA Compliant</span>
+                    <span>⭐ Industry Leading Safety</span>
+                    <span>🌍 Zero VOC Emissions</span>
+                    <span>♻️ 100% Recyclable Media</span>
+                    <span>💧 Water-Based Technology</span>
+                    <span>🌿 EPA Compliant</span>
+                    <span>⭐ Industry Leading Safety</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="testimonials">
+            <div class="container">
+                <h2>Industry Leaders Trust Us</h2>
+                <blockquote>
+                    "Prestige Worldwide's Eco-Blast system revolutionized our restoration process. Clean, efficient, and environmentally responsible."
+                    <cite>— Pacific Northwest Marine Services</cite>
+                </blockquote>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Idaho Topo-Map Footer -->
+    <footer class="idaho-footer">
+        <div class="topo-map">
+            <svg id="idaho-topo" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+                <!-- Idaho state outline approximation -->
+                <path d="M 100 50 L 700 50 L 700 100 L 650 150 L 600 200 L 550 250 L 500 300 L 400 350 L 300 350 L 200 300 L 150 250 L 100 200 Z" 
+                      fill="none" stroke="#4a7c59" stroke-width="2" opacity="0.3"/>
+                
+                <!-- Topographic contour lines -->
+                <ellipse cx="400" cy="200" rx="150" ry="100" fill="none" stroke="#5a8c69" stroke-width="1" opacity="0.2"/>
+                <ellipse cx="400" cy="200" rx="100" ry="70" fill="none" stroke="#5a8c69" stroke-width="1" opacity="0.3"/>
+                <ellipse cx="400" cy="200" rx="50" ry="40" fill="none" stroke="#5a8c69" stroke-width="1" opacity="0.4"/>
+                
+                <ellipse cx="250" cy="180" rx="80" ry="50" fill="none" stroke="#5a8c69" stroke-width="1" opacity="0.2"/>
+                <ellipse cx="250" cy="180" rx="50" ry="30" fill="none" stroke="#5a8c69" stroke-width="1" opacity="0.3"/>
+                
+                <ellipse cx="550" cy="220" rx="70" ry="60" fill="none" stroke="#5a8c69" stroke-width="1" opacity="0.2"/>
+                <ellipse cx="550" cy="220" rx="40" ry="35" fill="none" stroke="#5a8c69" stroke-width="1" opacity="0.3"/>
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>Prestige Worldwide</h3>
+                        <p>Dustless Eco-Blast Technology</p>
+                        <p>Proudly serving Idaho and the Pacific Northwest</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Automotive Restoration</li>
+                            <li>Marine Surface Prep</li>
+                            <li>Industrial Cleaning</li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <p>Phone: (208) 555-BLAST</p>
+                        <p>Email: info@prestigeeco.com</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Prestige Worldwide. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
