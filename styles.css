@@ -1,0 +1,510 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-grey-dark: #2c3e50;
+    --color-grey-medium: #5a6c7d;
+    --color-grey-light: #95a5a6;
+    --color-green-primary: #4a7c59;
+    --color-green-secondary: #5a8c69;
+    --color-green-light: #6b9d78;
+    --color-white: #ffffff;
+    --color-white-off: #f8f9fa;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-grey-dark);
+    background-color: var(--color-white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Grime Overlay - Dynamic Cleansing Effect */
+#grime-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(44, 62, 80, 0.15) 0%, 
+        rgba(90, 108, 125, 0.15) 50%, 
+        rgba(149, 165, 166, 0.15) 100%);
+    pointer-events: none;
+    z-index: 9998;
+    transition: opacity 0.1s ease-out;
+    background-size: 400% 400%;
+}
+
+/* Particle Canvas */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Sticky CTA */
+#sticky-cta {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    animation: fadeInSlide 0.5s ease-out;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#cta-button {
+    background: linear-gradient(135deg, var(--color-green-primary), var(--color-green-secondary));
+    color: var(--color-white);
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(74, 124, 89, 0.3);
+    transition: var(--transition-smooth);
+    letter-spacing: 0.5px;
+}
+
+#cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 124, 89, 0.4);
+    background: linear-gradient(135deg, var(--color-green-secondary), var(--color-green-light));
+}
+
+#cta-button:active {
+    transform: translateY(0);
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--color-grey-dark), var(--color-grey-medium));
+    color: var(--color-white);
+    padding: 60px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+    background-size: 50px 50px;
+    opacity: 0.3;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header .tagline {
+    font-size: 1.3em;
+    color: var(--color-green-light);
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0;
+    background: var(--color-white-off);
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    color: var(--color-grey-dark);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: var(--color-grey-medium);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Surface Selector */
+.surface-selector {
+    padding: 80px 0;
+    background: var(--color-white);
+}
+
+.surface-selector h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--color-grey-dark);
+    margin-bottom: 40px;
+}
+
+.selector-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.surface-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 30px 40px;
+    background: var(--color-white);
+    border: 3px solid var(--color-grey-light);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--color-grey-medium);
+    min-width: 150px;
+}
+
+.surface-btn .icon {
+    font-size: 2.5em;
+}
+
+.surface-btn:hover {
+    border-color: var(--color-green-secondary);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(74, 124, 89, 0.2);
+}
+
+.surface-btn.active {
+    background: linear-gradient(135deg, var(--color-green-primary), var(--color-green-secondary));
+    border-color: var(--color-green-primary);
+    color: var(--color-white);
+    box-shadow: 0 8px 20px rgba(74, 124, 89, 0.3);
+}
+
+.surface-info {
+    position: relative;
+    min-height: 400px;
+}
+
+.info-content {
+    display: none;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.info-content.active {
+    display: block;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-content h3 {
+    font-size: 2em;
+    color: var(--color-green-primary);
+    margin-bottom: 15px;
+}
+
+.info-content p {
+    font-size: 1.1em;
+    color: var(--color-grey-medium);
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.info-content img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--color-grey-dark), var(--color-grey-medium));
+    color: var(--color-white);
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--color-green-light);
+}
+
+.feature-card p {
+    line-height: 1.8;
+}
+
+/* Eco Ticker */
+.eco-ticker {
+    background: var(--color-green-primary);
+    padding: 20px 0;
+    overflow: hidden;
+    color: var(--color-white);
+}
+
+.ticker-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.ticker-content {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker-scroll 30s linear infinite;
+}
+
+@keyframes ticker-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.ticker-content span {
+    display: inline-block;
+    padding: 0 50px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 80px 0;
+    background: var(--color-white-off);
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5em;
+    color: var(--color-grey-dark);
+    margin-bottom: 40px;
+}
+
+blockquote {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.3em;
+    color: var(--color-grey-medium);
+    font-style: italic;
+    line-height: 1.8;
+    padding: 40px;
+    background: var(--color-white);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--color-green-primary);
+}
+
+cite {
+    display: block;
+    margin-top: 20px;
+    font-style: normal;
+    color: var(--color-green-primary);
+    font-weight: 600;
+}
+
+/* Idaho Topo-Map Footer */
+.idaho-footer {
+    position: relative;
+    background: var(--color-grey-dark);
+    color: var(--color-white);
+    padding-top: 60px;
+}
+
+.topo-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+#idaho-topo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section h3 {
+    color: var(--color-green-light);
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+    color: var(--color-grey-light);
+}
+
+.footer-section p {
+    color: var(--color-grey-light);
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 30px 0;
+    color: var(--color-grey-light);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header .tagline {
+        font-size: 1em;
+    }
+
+    .hero h2, .surface-selector h2, .features h2, .testimonials h2 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    #sticky-cta {
+        top: auto;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    #cta-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .selector-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .surface-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    blockquote {
+        font-size: 1.1em;
+        padding: 30px 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
